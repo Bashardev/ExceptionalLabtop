@@ -1,0 +1,504 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="img" href="logo.png">
+
+    <title>Bill Calculator</title>
+    <style>
+        body1 {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 230%;
+        }
+
+        .calculator {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        label {
+            margin-right: 10px;
+        }
+
+        select, input {
+            padding: 8px;
+            margin-bottom: 15px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #4caf50;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        #result {
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            align-items: center;
+        }
+
+        .bar1 {
+            background-color: #000000;
+            padding: 10px;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        #logo {
+            max-width: 50px; /* Adjust the width as needed */
+            margin-right: 10px;
+        }
+
+        #website-name {
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-right: auto; /* Move "Your Website" to the left */
+        }
+
+        nav {
+            display: flex;
+            margin-left: auto; /* Align navigation links to the right */
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #000000;
+            box-shadow: 0 8px 16px rgb(0, 0, 0);
+            z-index: 1;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-content a {
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        #search-container {
+            display: flex;
+            align-items: center;
+        }
+
+        #search-bar {
+            display: none;
+            margin-left: 10px;
+        }
+
+        #search-button {
+            cursor: pointer;
+        }
+
+
+
+        .centered {
+            
+            position:absolute;
+            top: 70%;
+            left: 68%;
+            transform: translate(-50,-50) ;
+            font-family:Arial, Helvetica, sans-serif;
+            
+            color: white; 
+            font-style: italic;}
+
+            .logo {
+            
+            position:absolute;
+            top: 210%;
+            left: 67%;
+            transform: translate(-50,-50) ;
+            
+           }
+            
+    </style>
+</head>
+<body>
+    <div class="bar1">
+        <a href="index.html"><img id="logo" src="logo.png" alt="Logo"></a>
+        <div id="website-name">ExceptionalLaptop</div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="index1.html">Log In</a>
+            <a href="index2.html">Sign Up</a>
+            <div class="dropdown">
+                <a>Our Services</a>
+                <div class="dropdown-content">
+                    <a href="index4.html">Exceptional Laptop</a>
+                    <a href="index5.html">Laptops Models</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <a>Bills</a>
+                <div class="dropdown-content">
+                    <a href="index8.html">Exceptional Laptop bill</a>
+                    <a href="index8_.html">Laptops Models bill</a>
+                </div>
+            </div>
+            <a href="index9.html">Have Fun</a>
+            <a href="index6.html">About Us</a>
+            <a href="index7.html">Contact Us</a>
+            <a href="index10.html">Questionnaire</a>
+           
+        </nav>
+        <div id="search-container">
+            <img src="search.png" alt="search" height="30"width="30">
+        </div>
+    </div>
+</body>
+
+<body1>
+    <div class="calculator">
+        <table>
+            <th colspan="6">
+                <h2>Bill Calculator For new  Laptop assumbling </h2>
+            </th>
+            <th >
+            <a style="text-align: right;" href="index11.html" ><button type="button" name="Ath" id="Ath" value="" >CLYPLWO</button> </a>
+            <h3 style="font-size: xx-small;">compare your Personal Laptop <br>
+             with Others</h3></th>
+             
+        </table>
+        
+        
+        <h4>laptop Components</h4>
+        
+        <hr>
+
+        <form >
+    
+            <label for="item"><strong>Size :</strong> </label>
+            <select name="size" id="item">
+                <option value=" 14 inch">14 inch</option>
+                <option value="15 inch">15 inch</option>
+                <option value="16 inch ">16 inch </option>
+                <option value="18 inch">18 inch </option>
+            </select>
+            <hr>
+            <label><strong>Processor:</strong>  </label>
+            <br>
+            <input type="radio" class="custom-radio" name="options-base" id="option" value="Intel i5" >
+                <label class="btn coler" for="option">Intel i5</label>
+
+                <input type="radio" class="custom-radio" name="options-base" id="option1" >
+                <label class="btn coler" for="option2">Intel i7</label>
+
+
+                <input type="radio" class="custom-radio" name="options-base" id="option2" >
+                <label class="btn coler" for="option3">Intel i9</label>
+
+                <input type="radio" class="custom-radio" name="options-base" id="option3" >
+                <label class="btn coler" for="option4">Ryzen 5</label>
+
+                <input type="radio" class="custom-radio" name="options-base" id="option4" >
+                <label class="btn coler" for="option5">Ryzen 7</label>
+
+                <input type="radio" class="custom-radio" name="options-base" id="option5" >
+                <label class="btn coler" for="option6">Ryzen 9</label>
+                   <hr>
+
+                <label> <strong>System:</strong>  </label>
+                <br>
+                <div >
+                    <input type="radio" class="custom-radio" name="options-base1" id="option"  >
+                    <label class="btn coler" for="option7">Windows 11 Home</label>
+    
+                    <input type="radio" class="custom-radio" name="options-base1" id="option1"  >
+                    <label class="btn coler" for="option8">Windows 11 Pro</label>
+                </div>
+                <hr>
+                <label> <strong>Graphics:</strong> </label>
+                <br>
+                <div>
+                    <input type="radio" class="custom-radio" name="options-base2" id="option"  >
+                    <label class="btn coler" for="option9" style="margin: 4px;">NVIDIA GeForce RTX 4060 , 8 GB GDDR6</label>
+                      <br>
+                    <input type="radio" class="custom-radio" name="options-base2" id="option1"  >
+                    <label class="btn coler" for="option10" style="margin: 4px;">NVIDIA GeForce RTX 4070 , 8 GB GDDR6</label>
+                    <br>
+                    <input type="radio" class="custom-radio" name="options-base2" id="option2"  >
+                    <label class="btn coler" for="option11" style="margin: 4px;">NVIDIA GeForce RTX 4080 , 12 GB GDDR6</label>
+                     <br>
+                    <input type="radio" class="custom-radio" name="options-base2" id="option3"  >
+                    <label class="btn coler" for="option12" style="margin: 4px;">NVIDIA GeForce RTX 4090 , 16 GB GDDR6</label>
+                </div>
+                   <hr>
+                <label><strong>Memory:</strong>  </label>
+                 <br>
+                 <div>
+                    <input type="radio" class="custom-radio" name="options-base3" id="option"  >
+                    <label class="btn coler" for="option13">16 GB: 2 x 8 GB, DDR5, 4800 MT/s</label>
+                    <br>
+                    <input type="radio" class="custom-radio" name="options-base3" id="option1"  >
+                    <label class="btn coler" for="option14">32 GB: 2 x 16 GB, DDR5, 4800 MT/s</label>
+                  <br>
+                    <input type="radio" class="custom-radio" name="options-base3" id="option2"  >
+                    <label class="btn coler" for="option15">64 GB: 4 x 16 GB, DDR5, 4800 MT/s</label>
+                </div>
+                  <hr>
+                <label><strong>Storage:</strong> </label>
+                <br>
+                <div>
+                    <input type="radio" class="custom-radio" name="options-base4" id="option"  >
+                    <label class="btn coler" for="option16">128 GB SSD</label>
+    
+                    <input type="radio" class="custom-radio" name="options-base4" id="option1"  >
+                    <label class="btn coler" for="option17">256 GB SSD</label>
+    
+                    <input type="radio" class="custom-radio" name="options-base4" id="option2"  >
+                    <label class="btn coler" for="option18">512 GB SSD</label>
+    
+                    <input type="radio" class="custom-radio" name="options-base4" id="option3"  >
+                    <label class="btn coler" for="option19">1 TB SSD</label>
+                    
+                    <input type="radio" class="custom-radio" name="options-base4" id="option4"  >
+                    <label class="btn coler" for="option20">2 TB SSD</label>
+                </div>
+               <hr>
+                <label><strong>Display:</strong> </label>
+                <br>
+                <div>
+                    <input type="radio" class="custom-radio" name="options-base5" id="option"  >
+                    <label class="btn coler" for="option21">16" QHD+ (2560 x 1600) 240Hz 3ms, ComfortView Plus,  100% DCI-P3, FHD IR Camera</label>
+             <br>
+                    <input type="radio" class="custom-radio" name="options-base5" id="option1"  >
+                    <label class="btn coler" for="option22">16" FHD+ (1920 x 1200)  480Hz, 3ms, ComfortView  Plus, 100% DCI-P3, FHD IR Camera</label>
+                </div>
+                <hr>
+                <label><strong> Color:</strong> </label>
+                <br>
+                <div>
+                    <input type="radio" class="custom-radio" name="options-base6" id="option"  >
+                    <label class="btn coler" for="option23">Dark</label>
+    
+                    <input type="radio" class="custom-radio" name="options-base6" id="option1"  >
+                    <label class="btn coler"for="option24">White</label>
+    
+                    <input type="radio" class="custom-radio" name="options-base6" id="option2"  >
+                    <label class="btn coler" for="option25">Light Gray</label>
+    
+                    <input type="radio" class="custom-radio" name="options-base6" id="option3"  >
+                    <label class="btn coler" for="option26">Light Blue</label>
+                </div>  
+                
+
+
+           <hr>
+            <label for="quantity">Quantity:</label>
+            <input type="number" id="quantity" value="1" min="1">
+            <br>
+            
+            <label>Enter if you have a cobon:
+                <input type="text" name="Cob" id="Cobon" value="">
+            </label>
+                <button type="button" name="Co" id="cobon" value="cobon" onclick="CheckCobon()">Apply</button>
+            
+            <br>
+           
+            <button type="button" onclick="calculateTotal()">Add to Bill</button>
+        </form>
+        <br>
+       
+
+        <div id="result"></div>
+        <hr>
+      <div style="text-align: left;">
+
+      <table>
+        <tr>
+            <td colspan="2"><strong>Address:</strong></td>
+            <td colspan="5"><strong>Phone:</strong></td>
+            <td></td>
+            <td colspan="6"><strong> Email:</strong></td>
+
+         </tr>  
+         <tr>
+            <th colspan="2"><h6> Seeb Al Khoudh SQU SEPS Muscat OM, 123</h6></th>
+            <th colspan="5"><h6>+968 99999999</h6></th>
+            <th> </th>
+            <th colspan="6"><h6>exceptionLaptop20@gmail.com</h6></th>
+
+         </tr>
+
+        </div>
+       </table>
+        <div class="logo" style="text-align: right;">
+            <img src="logo.png" style="width: 80%; height: 80;" alt="logo" >
+        
+        </div>
+   
+    </div>
+
+
+
+
+    <script>
+        function CheckCobon(){ //Checking form the enterd cobon is valid or not 
+            var Cobon=document.getElementById("Cobon").value;
+            if (Cobon.toLowerCase()=="student"||Cobon.toLowerCase()=="asma"){
+                alert("Congrats You have a 15% discount on your purchase..");}
+            else{
+               alert("Not Valid Cobon..")
+            }
+        }
+        var totalAmount = 0; //For total output
+
+        function calculateTotal() { //Calculating the choosen items
+            var selectedItem = document.getElementById('item');
+            var selectedQuantity = parseInt(document.getElementById('quantity').value);
+            var Cobon=document.getElementById("Cobon").value;
+            // Get the price of the selected item
+            var itemPrice=0;
+            switch (selectedItem.value) { 
+                case '14 inch':
+                    itemPrice = 75;
+                    break;
+                case '16 inch':
+                    itemPrice = 88;
+                    break;
+                case '18 inch':
+                    itemPrice = 100;
+                    break;
+                case "15 inch":
+                    itemPrice = 96;
+                    break;
+                default:
+                    itemPrice = 105;
+            }
+            var processorPrices = { //used somthing like Dictionare to store the id and the price 
+                'option': 65,
+                'option1': 44,
+                'option2': 98,
+                'option3': 50,
+                'option4': 34,
+                'option5': 100
+                    };
+
+                    var processorOption = document.querySelector('input[name="options-base"]:checked'); //Check which one is checked 
+                    itemPrice += processorPrices[processorOption.id] || 0; //get the price for that id 
+
+
+            var SystemPrices = {
+                'option': 130,
+                'option1': 170
+             
+                    };
+
+                    var SystemOption = document.querySelector('input[name="options-base1"]:checked');
+                    itemPrice += SystemPrices[SystemOption.id] || 0;
+
+            var GraphicsPrices = {
+                'option': 54,
+                'option1': 34,
+                'option2': 89,
+                'option3': 77
+           
+                    };
+
+                    var GraphicsOption = document.querySelector('input[name="options-base2"]:checked');
+                    itemPrice += GraphicsPrices[GraphicsOption.id] || 0;
+
+
+            var MemoryPrices = {
+                'option': 40,
+                'option1': 78,
+                'option2': 100
+           
+           
+                    };
+
+                    var MemoryOption = document.querySelector('input[name="options-base3"]:checked');
+                    itemPrice += MemoryPrices[MemoryOption.id] || 0;
+
+            var StoragePrices = {
+                'option': 30,
+                'option1': 46,
+                'option2': 58,
+                'option3': 77,
+                'option4':87
+           
+                    };
+
+                    var StorageOption = document.querySelector('input[name="options-base4"]:checked');
+                    itemPrice +=StoragePrices[StorageOption.id] || 0;
+
+            
+            var DisplayPrices = {
+                'option': 22,
+                'option1':65,
+                'option2': 89,
+                'option3': 34,
+                'option4':87
+           
+                    };
+
+                    var DisplayOption = document.querySelector('input[name="options-base5"]:checked');
+                    itemPrice +=DisplayPrices[DisplayOption.id] || 0;
+
+            
+
+            
+
+            // Calculate the total amount
+            var subtotal = itemPrice * selectedQuantity;
+            totalAmount += subtotal;
+            if (Cobon.toLowerCase()=="student"){ //Check if the cobon is valid than display the total with discount
+                alert("Congrats You have a 15% discount on your purchase..");
+                var dis=0.15;
+                totalAmount=totalAmount-(totalAmount*dis);
+                document.getElementById('result').innerHTML = 'Total Amount:' + totalAmount.toFixed(2)+"R.O";
+                totalAmount=0; //reset the total for next bill
+                itemPrice=0;//
+            }
+            else {//if not valid ..
+          
+            document.getElementById('result').innerHTML = 'Total Amount:' + totalAmount.toFixed(2)+"R.O";
+            totalAmount=0; //reset the total for next bill
+            itemPrice=0; //reset the total for next bill
+            }
+        }
+
+    </script>
+</body1>
+
+</html>

@@ -1,0 +1,302 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="img" href="logo.png">
+
+    <title>Bill For Ready laptops: </title>
+    <style>
+        body1 {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+        }
+
+        .calculator {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        label {
+            margin-right: 10px;
+        }
+
+        select, input {
+            padding: 8px;
+            margin-bottom: 15px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #4caf50;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        #result {
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            align-items: center;
+        }
+
+        .bar1 {
+            background-color: #000000;
+            padding: 10px;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        #logo {
+            max-width: 50px; /* Adjust the width as needed */
+            margin-right: 10px;
+        }
+
+        #website-name {
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-right: auto; /* Move "Your Website" to the left */
+        }
+
+        nav {
+            display: flex;
+            margin-left: auto; /* Align navigation links to the right */
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #000000;
+            box-shadow: 0 8px 16px rgb(0, 0, 0);
+            z-index: 1;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-content a {
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        #search-container {
+            display: flex;
+            align-items: center;
+        }
+
+        #search-bar {
+            display: none;
+            margin-left: 10px;
+        }
+
+        #search-button {
+            cursor: pointer;
+        }
+
+
+
+        .centered {
+            
+            position:absolute;
+            top: 70%;
+            left: 68%;
+            transform: translate(-50,-50) ;
+            font-family:Arial, Helvetica, sans-serif;
+            
+            color: white; 
+            font-style: italic;}
+            
+
+            .logo {
+                
+                position:absolute;
+                top: 81%;
+                left: 67%;
+                transform: translate(-50,-50) ;
+                
+            }
+    </style>
+</head>
+<body>
+    <div class="bar1">
+        <a href="index.html"><img id="logo" src="logo.png" alt="Logo"></a>
+        <div id="website-name">ExceptionalLaptop</div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="index1.html">Log In</a>
+            <a href="index2.html">Sign Up</a>
+            <div class="dropdown">
+                <a>Our Services</a>
+                <div class="dropdown-content">
+                    <a href="index4.html">Exceptional Laptop</a>
+                    <a href="index5.html">Laptops Models</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <a>Bills</a>
+                <div class="dropdown-content">
+                    <a href="index8.html">Exceptional Laptop bill</a>
+                    <a href="index8_.html">Laptops Models bill</a>
+                </div>
+            </div>
+            <a href="index9.html">Have Fun</a>
+            <a href="index6.html">About Us</a>
+            <a href="index7.html">Contact Us</a>
+            <a href="index10.html">Questionnaire</a>
+            
+        </nav>
+        <div id="search-container">
+            <img src="search.png" alt="search" height="30"width="30">
+        </div>
+    </div>
+</body>
+
+<body1>
+    <div class="calculator">
+        <h2>Bill Calculator For Available and ready laptops: </h2>
+        <h4>laptop Modals</h4>
+        <hr>
+        <form action="insertBill2.php" method="post" id="billForm">
+    
+            <label for="item">Select Labtop modal:</label>
+            <select name="model" id="item">
+                <option value="Maqil99">Maqil99</option>
+                <option value="Masbar86">Masbar86</option>
+                <option value="Mudarrar67">Mudarrar67</option>
+            </select>
+
+
+<br>
+            <label for="quantity">Quantity:</label>
+            <input type="number" id="quantity" value="1" min="1" max="5" name="Quantity">
+            <br>
+            <label>Enter if you have a cobon:
+                <input type="text" name="Cob" id="Cobon" value="">
+            </label>
+                <button type="button" name="Co" id="cobon" value="cobon" onclick="CheckCobon()">Apply</button>
+            
+            <br>
+
+            <button type="submit" onclick="calculateTotal()">Add to Bill</button>
+        </form>
+    
+
+        <div name="result"  id="result"></div>
+        <hr>
+        <div style="text-align: left;">
+         <table>
+            <tr>
+                <td colspan="2"><strong>Address:</strong></td>
+                <td colspan="5"><strong>Phone:</strong></td>
+                <td></td>
+                <td colspan="6"><strong> Email:</strong></td>
+    
+             </tr>  
+             <tr>
+                <th colspan="2"><h6> Seeb Al Khoudh SQU SEPS Muscat OM, 123</h6></th>
+                <th colspan="5"><h6>+968 99999999</h6></th>
+                <th> </th>
+                <th colspan="6"><h6>exceptionLaptop20@gmail.com</h6></th>
+    
+             </tr>
+           
+            </div>
+            
+    
+            <div class="logo">
+                <img src="logo.png" style="width: 80%; height: 80;" alt="logo" >
+            
+            </div>
+        </table>
+    </div>
+
+    <script>
+        function CheckCobon(){//Checking form the enterd cobon is valid or not 
+            var Cobon=document.getElementById("Cobon").value;
+            if (Cobon.toLowerCase()=="student"){
+                alert("Congrats You have a 15% discount on your purchase..");}
+            else{
+               alert("Not Valid Cobon..")
+            }
+        }
+        var totalAmount = 0;//For total output
+
+        function calculateTotal() {
+            var selectedItem = document.getElementById('item');
+            var selectedQuantity = parseInt(document.getElementById('quantity').value);
+            var Cobon=document.getElementById("Cobon").value;
+
+            // Get the price of the selected item
+            var itemPrice;
+            switch (selectedItem.value) {
+                case 'Maqil99':
+                    itemPrice = 458.900;
+                    break;
+                case 'Masbar86':
+                    itemPrice = 550.850;
+                    break;
+                case 'Mudarrar67':
+                    itemPrice = 728;
+                    break;
+                default:
+                    itemPrice = 0;
+            }
+
+            // Calculate the total amount
+            var subtotal = itemPrice * selectedQuantity;
+            totalAmount += subtotal;
+
+            if (Cobon.toLowerCase()=="student"){
+                alert("Congrats You have a 15% discount on your purchase..");
+                var dis=0.15;
+                totalAmount=totalAmount-(totalAmount*dis);
+                document.getElementById('result').innerHTML = 'Total Amount:' + totalAmount.toFixed(2)+"R.O";
+                totalAmount=0;
+                itemPrice=0;
+            }
+            else {
+          
+            document.getElementById('result').innerHTML = 'Total Amount:' + totalAmount.toFixed(2)+"R.O";
+            totalAmount=0;
+            itemPrice=0;
+            }
+        }
+    </script>
+</body1>
+
+</html>

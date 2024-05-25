@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ExceptionalLaptop</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+        }
+
+        header {
+            background-color: #000000;
+            padding: 10px;
+            color: white;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        #logo {
+            max-width: 20px;
+            margin-right: 10px;
+        }
+
+        #website-name {
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-bottom: 10px;
+            flex: 1;
+        }
+
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content:flex-start; /* Center the items */
+            align-items: center; /* Center vertically */
+            flex: 1;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 8px;
+            white-space: nowrap;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #000000;
+            box-shadow: 0 8px 16px rgb(0, 0, 0);
+            z-index: 1;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-content a {
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        #search-container {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end; /* Push to the right */
+            flex: 1;
+            max-width: 150px; /* Adjust max-width as needed */
+        }
+
+        #search-bar {
+            display: none;
+            margin-left: 10px;
+            flex: 1;
+            max-width: 100px; /* Adjust max-width as needed */
+        }
+
+        #search-button {
+            cursor: pointer;
+        }
+
+        #search-bar.active {
+            display: inline-block;
+        }
+
+        @media screen and (max-width: 600px) {
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            nav {
+                width: 100%;
+                justify-content: center;
+                margin-top: 10px;
+            }
+
+            #search-container {
+                margin-top: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img id="logo" src="logo.png" alt="Logo">
+        <div id="website-name">ExceptionalLaptop</div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="index1.html">Log In</a>
+            <a href="index2.html">Sign In</a>
+            <div class="dropdown">
+                <a>Services</a>
+                <div class="dropdown-content">
+                    <a href="index4.html">Exceptional Laptop</a>
+                    <a href="index5.html">Laptops Models</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <a>Bills</a>
+                <div class="dropdown-content">
+                    <a href="index8.html">Exceptional Laptop bill</a>
+                    <a href="index8_.html">Laptops Models bill</a>   
+                </div>
+            </div>
+            <a href="Our company.html">About Us</a>
+            <a href="index9.html">Have Fun</a>
+            <a href="index7.html">Contact Us</a>
+            <a href="index10.html">Questionnaire</a>
+            <a href="http://localhost/php/php/MyCart.php"><img src="cart.jpeg" alt="cart" height="30" width="30"></a>
+        </nav>
+        <div id="search-container">
+            <img id="search-button" src="search.png" alt="search" height="40" width="40">
+            <input type="text" id="search-bar" placeholder="Type your search...">
+        </div>
+    </header>
+
+    <script>
+        document.getElementById('search-button').addEventListener('click', function () {
+            var searchBar = document.getElementById('search-bar');
+            searchBar.classList.toggle('active');
+            if (searchBar.classList.contains('active')) {
+                searchBar.focus();
+            }
+        });
+    </script>
+</body>
+</html>

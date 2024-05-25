@@ -1,0 +1,271 @@
+
+<html >
+    <head>
+        <title>FunPage</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
+        <link rel="icon" type="img" href="logo.png">
+        <link rel="stylesheet" href="mainCSS.css">
+        <style>
+            
+          
+            body {
+                margin: 0;
+                font-family: 'Arial', sans-serif;
+                
+                align-items: center;
+            }
+    
+            .bar1 {
+                background-color: #000000;
+                padding: 10px;
+                color: white;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+    
+            #logo {
+                max-width: 50px; /* Adjust the width as needed */
+                margin-right: 10px;
+            }
+    
+            #website-name {
+                font-size: 1.5em;
+                font-weight: bold;
+                margin-right: auto; /* Move "Your Website" to the left */
+            }
+    
+            nav {
+                display: flex;
+                margin-left: auto; /* Align navigation links to the right */
+            }
+    
+            nav a {
+                color: white;
+                text-decoration: none;
+                margin: 0 15px;
+            }
+    
+            .dropdown {
+                position: relative;
+                display: inline-block;
+            }
+    
+            .dropdown-content {
+                display: none;
+                position: absolute;
+                background-color: #000000;
+                box-shadow: 0 8px 16px rgb(0, 0, 0);
+                z-index: 1;
+            }
+    
+            .dropdown:hover .dropdown-content {
+                display: block;
+            }
+    
+            .dropdown-content a {
+                color: white;
+                padding: 12px 16px;
+                text-decoration: none;
+                display: block;
+            }
+    
+            #search-container {
+                display: flex;
+                align-items: center;
+            }
+    
+            #search-bar {
+                display: none;
+                margin-left: 10px;
+            }
+    
+            #search-button {
+                cursor: pointer;
+            }
+    
+    
+    
+            .centered {
+                
+                position:absolute;
+                top: 70%;
+                left: 68%;
+                transform: translate(-50,-50) ;
+                font-family:Arial, Helvetica, sans-serif;
+                
+                color: white; 
+                font-style: italic;
+            }
+            .choo{
+               
+            border-radius: 8px;
+            height: 30%;
+            width: 45%;
+        
+            align-items: center;
+            justify-content: center;
+
+            position: absolute;
+            top: 55%;
+            left: 55%;
+            transform: translate(-50%, -50%);
+
+
+            }
+    
+    
+         
+    
+        </style>
+    </head>
+    
+    
+    
+    
+    
+    <body style="background-image:url(Ga.jpg);">
+        <div class="bar1">
+            <a href="index.html"><img id="logo" src="logo.png" alt="Logo"></a>
+            <div id="website-name">ExceptionalLaptop</div>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="index1.html">Log In</a>
+                <a href="index2.html">Sign Up</a>
+                <div class="dropdown">
+                    <a>Our Services</a>
+                    <div class="dropdown-content">
+                        <a href="index4.html">Exceptional Laptop</a>
+                        <a href="index5.html">Laptops Models</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <a>Bills</a>
+                    <div class="dropdown-content">
+                        <a href="index8.html">Exceptional Laptop bill</a>
+                        <a href="index8_.html">Laptops Models bill</a>
+                    </div>
+                </div>
+                <a href="index9.html">Have Fun</a>
+                <a href="index6.html">About Us</a>
+                <a href="index7.html">Contact Us</a>
+                <a href="index10.html">Questionnaire</a>
+            </nav>
+            <div id="search-container">
+                <img src="search.png" alt="search" height="30"width="30">
+            </div>
+        </div>
+    
+
+        <form action="">
+
+            <div class="choo">
+                <input type="button" name="Exceptional" id="i1" value="Exceptional" onclick="cek(this.id)">
+    
+                <input type="button" name="The" value="The" id="i2" onclick="cek(this.id)">
+    
+                <input type="button" name="we" value="we" id="i3" onclick="cek(this.id)">
+    
+                <input type="button" name="Laptop" value="Laptop" id="i4" onclick="cek(this.id)">
+                <input type="button" name="Do" value="Do" id="i5" onclick="cek(this.id)">
+    
+                <input type="button" name="Unexpected" value="Unexpected" id="i6" onclick="cek(this.id)">
+    
+                <br>
+                <br>
+                <p><strong>Result :</strong> </p>
+                <p id="R"></p>
+    
+                <input type="button" value="Check Assembling" onclick="checkAssembling()">
+            </div>
+        </form>
+    
+        <script>
+            var cor = false; //Boolean var for checking the correctnes
+            var gatherWord = ""; //Stroe the choosen words
+            var Rs = document.getElementById("R"); //To modfiy the result
+            var correctSentence = "Exceptional Laptop we Do The Unexpected";
+    
+            function cek(Word) { //Gather the words and show it to the user
+                var btn = document.getElementById(Word); 
+                gatherWord = gatherWord + " " + document.getElementById(Word).value;
+                document.getElementById("R").innerHTML = gatherWord;
+    
+                btn.style.display = 'none'; //To remove the choosen word
+            }
+    
+    
+            function checkAssembling() { //Check if the entered words is correct 
+             var enteredSentence = gatherWord.trim().toLowerCase(); //Used trim to remove the extra spaces .
+    
+             if (enteredSentence === correctSentence.toLowerCase()) { //compare
+                    alert("Correct Assembling! Great");
+                    cor = true;
+                } else {
+                    alert("Not correct Assembling! Try again..");
+                    resetPuzzle(); 
+                }
+           }
+    
+            function resetPuzzle() { //To re show the words for another chance .
+                
+                cor = false;
+                gatherWord = "";
+                document.getElementById("R").innerHTML = "";
+                for (let i = 1; i <= 6; i++) {
+                    document.getElementById("i" + i).style.display = 'inline-block';
+                }
+            }
+        </script>
+
+    </body>
+    
+    </html>
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    

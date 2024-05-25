@@ -1,0 +1,381 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Search..</title>
+    <link rel="icon" type="img" href="logo.png">
+
+<style>
+
+body{
+            background-color:#f4f4f4;
+            font-family: 'Arial', sans-serif;
+           
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            }
+
+            form,#PCTable{
+                margin:auto;
+            background-color:bisque;
+            padding: 40px;
+            border-radius: 23px;
+            box-shadow: 0 0 10px black;
+            max-width: 1200px;
+            width: 100%;}
+
+            button {
+            background-color: rgb(23, 61, 187);
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+
+
+
+        td,th{
+            text-align: center;
+
+            
+        }
+
+
+        header {
+            background-color: #000000;
+            padding: 10px;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        #logo {
+            max-width: 50px; /* Adjust the width as needed */
+            margin-right: 10px;
+        }
+
+        #website-name {
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-right: auto; /* Move "Your Website" to the left */
+        }
+
+        nav {
+            display: flex;
+            margin-left: auto; /* Align navigation links to the right */
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #000000;
+            box-shadow: 0 8px 16px rgb(0, 0, 0);
+            z-index: 1;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-content a {
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        #search-container {
+            display: flex;
+            align-items: center;
+        }
+
+        #search-bar {
+            display: none;
+            margin-left: 10px;
+        }
+
+        #search-button {
+            cursor: pointer;
+        }
+
+        footer{
+                margin:auto;
+            background-color:#ccc;
+            padding: 40px;
+            border-radius: 23px;
+            box-shadow: 0 0 10px black;
+            max-width: 1200px;
+            width: 100%;
+
+        }
+
+</style>
+
+<script>
+   
+function PC(Name,Size,Processor,System,Graphics	,Memory	,Storage,color,Price) 
+{
+    this.Name = Name;
+    this.Size = Size;
+    this.Processor = Processor;
+    this.System = System;
+    this.Graphics = Graphics;
+    this.Memory = Memory;
+    this.Storage = Storage;
+    this.color = color;
+    this.Price = Price;
+}
+
+
+
+var PCArray = [
+    new PC("PC1", 14, "Intel i7","Windows 11 Pro","RTX 4060,8GB",32,512,"Green",647),
+    new PC("PC2", 18, "Rayzen5","Windows 11 Home","RTX 4090,16GB",32,512,"Blue",534),
+   
+];
+
+
+
+function displayPC() {
+    var tableBody = document.getElementById('PCTable').getElementsByTagName('tbody')[0];
+    tableBody.innerHTML = "";
+
+    PCArray.forEach(function (PC) {
+        var row = tableBody.insertRow();
+        var cell1 = row.insertCell(0);
+        var cell2 = row.insertCell(1);
+        var cell3 = row.insertCell(2);
+        var cell4 = row.insertCell(3);
+        var cell5 = row.insertCell(4);
+        var cell6 = row.insertCell(5);
+        var cell7 = row.insertCell(6);
+        var cell8 = row.insertCell(7);
+        var cell9 = row.insertCell(8);
+
+
+
+        cell1.innerHTML = PC.Name;
+        cell2.innerHTML = PC.Size;
+        cell3.innerHTML = PC.Processor;
+        cell4.innerHTML = PC.System;
+        cell5.innerHTML = PC.Graphics;
+        cell6.innerHTML = PC.Memory;
+        cell7.innerHTML = PC.Storage;
+        cell8.innerHTML = PC.color;
+        cell9.innerHTML = PC.Price;
+    });
+}
+
+
+
+function addPC() {
+    var Name = document.getElementById('Name').value;
+    var Size = document.getElementById('Size').value;
+    var Processor = document.getElementById('Processor').value;
+    var System = document.getElementById('System').value;
+    var Graphics = document.getElementById('Graphics').value;
+    var Storage = document.getElementById('Storage').value;
+    var color = document.getElementById('color').value;
+    var Price = document.getElementById('Price').value;
+    var Memory = document.getElementById('Memory').value;
+
+    var newPC = new PC(Name,Size,Processor,System,Graphics,Memory,Storage,color,Price);
+    PCArray.push(newPC);
+
+    displayPC(); 
+}
+
+
+function searchPC() {
+    var searchName = document.getElementById('searchPCName').value;
+    var result = PCArray.find(function (PC) {
+        return PC.Name === searchName;
+    });
+
+    if (result) {
+        alert('PC found:\nName: ' + result.name + '\nSize: ' + result.Size + '\nProcessor: ' + result.Processor
+        +'\nSystem: ' + result.System + '\nGraphics: ' + result.Graphics + '\nMemory: ' + result.Memory+'\nStorage: ' +
+        + result.Storage + '\ncolor: ' + result.color + '\nPrice: ' + result.Price);
+    } else {
+        alert('PC not found.');
+    }
+}
+
+</script>
+
+
+</head>
+
+
+
+
+
+
+
+
+
+<body>
+
+
+    <header>
+        <a href="index.html"><img id="logo" src="logo.png" alt="Logo"></a>
+        <div id="website-name">ExceptionalLaptop</div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="index1.html">Log In</a>
+            <a href="index2.html">Sign Up</a>
+            <div class="dropdown">
+                <a>Our Services</a>
+                <div class="dropdown-content">
+                    <a href="index4.html">Exceptional Laptop</a>
+                    <a href="index5.html">Laptops Models</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <a>Bills</a>
+                <div class="dropdown-content">
+                    <a href="index8.html">Exceptional Laptop bill</a>
+                    <a href="index8_.html">Laptops Models bill</a>
+                </div>
+            </div>
+            <a href="index9.html">Have Fun</a>
+            <a href="index6.html">About Us</a>
+            <a href="index7.html">Contact Us</a>
+            <a href="index10.html">Questionnaire</a>
+        </nav>
+        <div id="search-container">
+            <img src="search.png" alt="search" height="30"width="30">
+        </div>
+    </header> 
+<br>
+
+
+    <h1 style="text-align: center;">Add Your Personal Laptop</h1>
+    <form>
+<table id="PCTable">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Size</th>
+            <th>Processor</th>
+            <th>System</th>
+            <th>Graphics</th>
+            <th>Memory</th>
+            <th>Storage</th>
+            <th>color</th>
+            <th>Price</th>
+        </tr>
+    </thead>
+    <tbody></tbody>
+</table></form>
+<br>
+<!-- Second Table -->
+
+<!-- Form for adding a student -->
+<form id="addPCForm" >
+    <div style="text-align: center;">
+    <label>Name: <input type="text" id="Name" value="PC#"></label><br><br>
+    <label>Size: <input type="number" id="Size"></label>
+    <label>Processor: <input type="text" id="Processor"></label><br><br>
+    <label>System: <input type="text" id="System"></label>
+    <label>Graphics: <input type="text" id="Graphics"></label><br><br>
+    <label>Memory: <input type="number" id="Memory"></label>
+    <label>Storage: <input type="number" id="Storage"></label><br><br>
+    <label>color: <input type="text" id="color"></label>
+    <label>Price: <input type="number" id="Price"></label><br><br>
+    <button type="button" onclick="addPC()">Add PC</button></div>
+</form>
+<br>
+<!-- Form for searching students -->
+<form id="searchPCForm">
+    <div style="text-align: center;">
+    <label>Search by Name: <input type="text" id="searchPCName"></label>
+    <button type="button" onclick="searchPC()">Search Laptop</button></div>
+</form>
+ <br>
+
+
+
+
+
+    
+    <footer>
+    
+      <table><hr>
+      <tr >
+         <td rowspan="4"><img src="logo.png" style="width: 50%; height: 50;" alt="logo" ></td>
+      </tr>
+      <tr>
+         <td colspan="1"><strong>Address:</strong></td>
+         <td colspan="2"><strong>Phone:</strong></td>
+         <td></td>
+         <td colspan="3"><strong> Email:</strong></td>
+ 
+      </tr>  
+                    
+      <tr>
+         <th colspan="1"><h6> Seeb Al Khoudh SQU SEPS Muscat OM, 123</h6></th>
+         <th colspan="2"><h6>+968 99999999</h6></th>
+         <th> </th>
+         <th colspan="3"><h6>exceptionLaptop20@gmail.com</h6></th>
+ 
+      </tr>
+      <tr>
+         <th colspan="7"></th>
+         <th colspan="3"><a href="index7.html"><button style="border: 30px;" class="btn btn-dark btn-outline-warning" ><B>Countact Us</B></button></a></th>
+      </tr>
+      <tr>
+         <td ></td>
+         <td colspan="2"><strong>Follow us:</strong></td>
+      </tr>
+      <tr>
+         <th colspan="2"></th>
+         <th colspan="5">
+              <table>
+                <tr>
+                  <th>
+                       <a href="https://www.instagram.com/"  style=" margin: 2px;">
+                       <img src="insta.png" alt="Instagram"  style="width: 50px; height: 50px;">
+                       </a>
+                  </th>
+                  <th>
+                      <a href="https://www.youtube.com/"  style=" margin: 2px;">
+                      <img src="youtube.png" alt="youtube"  style="width: 50px; height: 50px;">
+                      </a>
+                  </th>
+                  <th>
+                      <a href="https://twitter.com/"  style=" margin: 2px;">
+                      <img src="twitter.png" alt="twitter"  style="width: 50px; height: 50px;">
+                      </a>
+                  </th>
+                  <th>
+                      <a href="https://www.facebook.com/"  style=" margin: 2px;">
+                      <img src="facebook.png" alt="facebook"  style="width: 50px; height: 50px;">
+                      </a>
+                  </th>
+ 
+                 </tr>
+              </table>
+       </table><hr/>
+     </footer>
+     
+
+
+</body>
+<!-- Similar forms for employees -->
+</html>

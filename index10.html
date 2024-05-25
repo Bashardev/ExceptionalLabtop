@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="icon" type="img" href="logo.png">
+        <title>Questionnaire Page</title>
+        <style>
+            body{
+            background-color:#f4f4f4;
+            font-family: 'Arial', sans-serif;
+           
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            }
+
+
+            dd{margin-left: 44%;}
+            dt,div.one{text-align: center;}
+
+            form{
+                margin:auto;
+            background-color:bisque;
+            padding: 40px;
+            border-radius: 23px;
+            box-shadow: 0 0 10px black;
+            max-width: 900px;
+            width: 100%;}
+
+            textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            background-color: rgb(23, 61, 187);
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+           
+
+
+
+        td,th{
+            text-align: center;
+
+            
+        }
+
+
+        header {
+            background-color: #000000;
+            padding: 10px;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        #logo {
+            max-width: 50px; /* Adjust the width as needed */
+            margin-right: 10px;
+        }
+
+        #website-name {
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-right: auto; /* Move "Your Website" to the left */
+        }
+
+        nav {
+            display: flex;
+            margin-left: auto; /* Align navigation links to the right */
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #000000;
+            box-shadow: 0 8px 16px rgb(0, 0, 0);
+            z-index: 1;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-content a {
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        #search-container {
+            display: flex;
+            align-items: center;
+        }
+
+        #search-bar {
+            display: none;
+            margin-left: 10px;
+        }
+
+        #search-button {
+            cursor: pointer;
+        }
+
+        footer{
+                margin:auto;
+            background-color:#ccc;
+            padding: 40px;
+            border-radius: 23px;
+            box-shadow: 0 0 10px black;
+            max-width: 1200px;
+            width: 100%;
+
+        }
+
+
+        </style>
+
+<script>
+    function validateForm() {
+        // Check Nationality
+        var nationalityInput = document.getElementsByName('Nationality')[0].value;
+        if (nationalityInput.trim() === '') {
+            alert('Please enter your nationality.');
+            return;
+        }
+
+        // Check City
+        var cityInput = document.getElementsByName('city')[0].value;
+        if (cityInput.trim() === '') {
+            alert('Please enter your city.');
+            return;
+        }
+
+        // Check Gender
+        var genderInputs = document.getElementsByName('gender');
+        var selectedGender = false;
+        for (var i = 0; i < genderInputs.length; i++) {
+            if (genderInputs[i].checked) {
+                selectedGender = true;
+                break;
+            }
+        }
+        if (!selectedGender) {
+            alert('Please select your gender.');
+            return;
+        }
+
+        // Check Employment Status
+        var statusInputs = document.getElementsByName('status');
+        var selectedStatus = false;
+        for (var i = 0; i < statusInputs.length; i++) {
+            if (statusInputs[i].checked) {
+                selectedStatus = true;
+                break;
+            }
+        }
+        if (!selectedStatus) {
+            alert('Please select your employment status.');
+            return;
+        }
+
+        // Check How the User Found the Website
+        var serviceInputs = document.getElementsByName('service');
+        var foundService = false;
+        for (var i = 0; i < serviceInputs.length; i++) {
+            if (serviceInputs[i].checked) {
+                foundService = true;
+                break;
+            }
+        }
+        if (!foundService) {
+            alert('Please select how you found our website.');
+            return;
+        }
+
+        // Check Rating
+        var ratingInput = document.getElementsByName('rating')[0].value;
+        if (isNaN(ratingInput) || ratingInput < 1 || ratingInput > 5) {
+            alert('Please enter a valid rating between 1 and 5.');
+            return;
+        }
+
+        // Check Recommendation
+        var recommendInputs = document.getElementsByName('recommend');
+        var selectedRecommend = false;
+        for (var i = 0; i < recommendInputs.length; i++) {
+            if (recommendInputs[i].checked) {
+                selectedRecommend = true;
+                break;
+            }
+        }
+        if (!selectedRecommend) {
+            alert('Please select whether you would recommend our website.');
+            return;
+        }
+
+        // Check Suggestions/Improvements
+        var suggestionsInput = document.getElementsByName('features')[1].value;
+        if (suggestionsInput.trim() === '') {
+            alert('Please provide any suggestions or improvements.');
+            return;
+        }
+
+        // If all validations pass, you can submit the form or perform further actions.
+        alert('Form submitted successfully!');
+    }
+</script>
+
+    </head>
+    <body>
+        
+
+        <header>
+            <a href="index.html"><img id="logo" src="logo.png" alt="Logo"></a>
+        <div id="website-name">ExceptionalLaptop</div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="index1.html">Log In</a>
+            <a href="index2.html">Sign Up</a>
+            <div class="dropdown">
+                <a>Our Services</a>
+                <div class="dropdown-content">
+                    <a href="index4.html">Exceptional Laptop</a>
+                    <a href="index5.html">Laptops Models</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <a>Bills</a>
+                <div class="dropdown-content">
+                    <a href="index8.html">Exceptional Laptop bill</a>
+                    <a href="index8_.html">Laptops Models bill</a>
+                </div>
+            </div>
+            <a href="index9.html">Have Fun</a>
+            <a href="index6.html">About Us</a>
+            <a href="index7.html">Contact Us</a>
+            <a href="index10.html">Questionnaire</a>
+        </nav>
+        <div id="search-container">
+            <img src="search.png" alt="search" height="30"width="30">
+        </div>
+    </div>
+        </header> 
+<br>
+
+
+
+       
+
+<form action="mailto:s134434@student.squ.edu.om" method="post" >        
+    <div class="one">
+        <h1> Feedback Questionnaire </h1>
+        <hr>
+    <label for="name"><b>Nationality:</b></label>
+            <input type="text" id="name" name="Nationality" required><br><br>
+    <label for="city"><b>City: </b>   </label>
+            <input type="text" id="city" name="city" required><br><br></div>
+<hr>
+<div class="one"> <label><b>Gender:</b></label>
+            <label><input type="radio" name="gender" value="male"> Male</label>
+            <label><input type="radio" name="gender" value="female"> Female</label></div>
+<hr>
+<div> <dl><dt><label><b> What is your employment status?</b></label></dt>
+            <dd><label><input type="radio" name="status" value="School student"> School student</label><br></dd>
+            <dd><label><input type="radio" name="status" value="university student"> university student</label><br></dd>
+            <dd><label><input type="radio" name="status" value="employee"> employee </label><br></dd>
+            <dd> <label><input type="radio" name="status" value="unemployee"> unemployee </label><br><br></dd>
+</dl></div>
+<div >
+<dl><dt><label><b>How did you find our website?</b></label></dt>
+    <dd><label><input type="checkbox" name="service" value="Search engine"> Search engine</label></dd>
+        <dd><label><input type="checkbox" name="service" value="Social media"> Social media</label></dd>
+            <dd><label><input type="checkbox" name="service" value="Referral from a friend"> Referral from a friend</label></dd>
+            <dd><label><input type="checkbox" name="service" value="other"> <label for="feedback">Other</label>
+                 <textarea id="feedback" name="feedback" rows="2" cols="13" required></textarea></label></dd>
+        </dl>  </div>   
+<hr>         
+<div class="one"><label for="rating">How would you rate<b> 1 (poor) to 5 (spectacular)</b>, the overall design and user experience of our website?    </label>
+            <input type="number" id="rating" size="12" name="rating" min="1" max="5" required>
+        </div><hr>
+
+    <div class="one"><label for="features"><b>What specific features or content do you find most valuable on our website?</b></label><br>
+            <blockquote><textarea id="features" name="features" rows="6" cols="45" required></textarea></blockquote>
+    </div>
+
+        <div>    <dl><dt><label><b>Would you recommend our website to others?</b></label></dt>
+                <dd><label><input type="radio" name="recommend" value="YES">YES</label></dd>
+                    <dd><label><input type="radio" name="recommend" value="NO"> NO</label></dd>
+                        <dd> <label><input type="radio" name="recommend" value="Maybe"> Maybe </label></dd>           
+                    </div></dl>
+<hr>
+
+<div class="one"><label for="features"><b>Is there anything missing or any improvements you would like to suggest?</b></label><br>
+            <blockquote><textarea id="features" name="features" rows="6" cols="45" required></textarea></blockquote>
+        </div><hr>
+    <div class="one"><button type="button" onclick="validateForm() ">  <b> Submit </b>   </button>
+<button type="reset" value="clear"> <b> Clear </b>  </button>
+</div>
+<hr>
+</form>
+
+
+
+
+
+<br>
+
+
+
+
+
+<div>
+    
+   <footer>
+    <hr/>
+     <table>
+     <tr >
+        <td rowspan="4"><img src="logo.png" style="width: 50%; height: 50;" alt="logo" ></td>
+     </tr>
+     <tr>
+        <td colspan="1"><strong>Address:</strong></td>
+        <td colspan="2"><strong>Phone:</strong></td>
+        <td></td>
+        <td colspan="3"><strong> Email:</strong></td>
+
+     </tr>  
+                   
+     <tr>
+        <th colspan="1"><h6> Seeb Al Khoudh SQU SEPS Muscat OM, 123</h6></th>
+        <th colspan="2"><h6>+968 99999999</h6></th>
+        <th> </th>
+        <th colspan="3"><h6>exceptionLaptop20@gmail.com</h6></th>
+
+     </tr>
+     <tr>
+        <th colspan="7"></th>
+        <th colspan="3"><a href="index7.html"><button style="border: 30px;" class="btn btn-dark btn-outline-warning" ><B>Countact Us</B></button></a></th>
+     </tr>
+     <tr>
+        <td ></td>
+        <td colspan="2"><strong>Follow us:</strong></td>
+     </tr>
+     <tr>
+        <th colspan="2"></th>
+        <th colspan="5">
+             <table>
+               <tr>
+                 <th>
+                      <a href="https://www.instagram.com/"  style=" margin: 2px;">
+                      <img src="insta.png" alt="Instagram"  style="width: 50px; height: 50px;">
+                      </a>
+                 </th>
+                 <th>
+                     <a href="https://www.youtube.com/"  style=" margin: 2px;">
+                     <img src="youtube.png" alt="youtube"  style="width: 50px; height: 50px;">
+                     </a>
+                 </th>
+                 <th>
+                     <a href="https://twitter.com/"  style=" margin: 2px;">
+                     <img src="twitter.png" alt="twitter"  style="width: 50px; height: 50px;">
+                     </a>
+                 </th>
+                 <th>
+                     <a href="https://www.facebook.com/"  style=" margin: 2px;">
+                     <img src="facebook.png" alt="facebook"  style="width: 50px; height: 50px;">
+                     </a>
+                 </th>
+
+                </tr>
+             </table>
+      </table><hr/>
+    </footer>
+    
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </body>
+</html>
